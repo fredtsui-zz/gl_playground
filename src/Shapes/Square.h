@@ -1,6 +1,6 @@
 #pragma once
 #include "Shape.h"
-class Square : Shape {
+class Square : public Shape {
 protected:
 	GLfloat a;
 public:

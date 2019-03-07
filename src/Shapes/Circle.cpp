@@ -1,6 +1,7 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include "Circle.h"
+#include "../Tools/tools.h"
 using namespace std;
 
 #define ANGULAR_STEP 12
@@ -16,7 +17,8 @@ GLenum Circle::getRenderType() const {
 std::vector<Point> Circle::getVertices() const {
 	vector<Point> retval;
 	for (int i = 0; i < 360; i += ANGULAR_STEP) {
-		retval.emplace_back(position.x + r * sin(i * M_PI / 180.0), position.y + r * cos(i * M_PI / 180.0));
+		retval.emplace_back((position.x + r * sin(i * M_PI / 180.0))/WINDOW_WIDTH/2, 
+							(position.y + r * cos(i * M_PI / 180.0))/WINDOW_HEIGHT/2);
 	}
 	return retval;
 }
