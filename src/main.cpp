@@ -5,9 +5,11 @@
 #include <chrono>
 int main(void)
 {
-	std::shared_ptr<Shape> c{ new Circle{0.0f, 0.0f, 1.0f} };
+	std::shared_ptr<Shape> c1{ new Circle{200.0f, 0.0f, 50.0f} };
+	std::shared_ptr<Shape> c2{ new Circle{-200.0f, 0.0f, 50.0f} };
 	std::vector<std::shared_ptr<Shape>> shapes;
-	shapes.push_back(c);
+	shapes.push_back(c1);
+	shapes.push_back(c2);
 	GLFWwindow* window;
 
 	if (!glfwInit())
@@ -29,7 +31,7 @@ int main(void)
 
 		glClear(GL_COLOR_BUFFER_BIT);
 
-
+		renderPlayingField(shapes);
 
 		glfwSwapBuffers(window);
 
