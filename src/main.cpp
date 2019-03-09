@@ -1,8 +1,10 @@
 #include <iostream>
-#include "Shapes/Circle.h"
-#include "Tools/tools.h"
 #include <thread>
 #include <chrono>
+#include "Shapes/Circle.h"
+#include "Tools/tools.h"
+#include "Game/game.h"
+
 int main(void)
 {
 	std::shared_ptr<Shape> c1{ new Circle{200.0f, 0.0f, 50.0f} };
@@ -10,7 +12,9 @@ int main(void)
 	std::vector<std::shared_ptr<Shape>> shapes;
 	shapes.push_back(c1);
 	shapes.push_back(c2);
+	Game game;
 	GLFWwindow* window;
+
 
 	if (!glfwInit())
 		return -1;
@@ -31,7 +35,8 @@ int main(void)
 
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		renderPlayingField(shapes);
+		//renderPlayingField(shapes);
+		game.drawGameboard();
 
 		glfwSwapBuffers(window);
 

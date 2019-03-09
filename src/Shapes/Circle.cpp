@@ -17,8 +17,8 @@ GLenum Circle::getRenderType() const {
 std::vector<Point> Circle::getVertices() const {
 	vector<Point> retval;
 	for (int i = 0; i < 360; i += ANGULAR_STEP) {
-		retval.emplace_back((position.x + r * sin(i * M_PI / 180.0))/WINDOW_WIDTH/2, 
-							(position.y + r * cos(i * M_PI / 180.0))/WINDOW_HEIGHT/2);
+		retval.emplace_back((position.x + r * cos(i * M_PI / 180.0))/WINDOW_WIDTH/2, 
+							(position.y + r * sin(i * M_PI / 180.0))/WINDOW_HEIGHT/2);
 	}
 	return retval;
 }

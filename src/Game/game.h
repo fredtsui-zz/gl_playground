@@ -5,6 +5,10 @@
 
 class Game {
 private:
+	const GLubyte COLOR_OPP[3] = { GLubyte(175), GLubyte(175), GLubyte(255) };
+	const GLubyte COLOR_SLF[3] = { GLubyte(255), GLubyte(175), GLubyte(175) };
+	const GLubyte COLOR_BAL[3] = { GLubyte(0), GLubyte(0), GLubyte(0) };
+
 	Circle ball;
 	Line *player1, *player2;
 public:
