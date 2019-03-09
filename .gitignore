@@ -3,3 +3,4 @@ Dependencies/
 Debug/
 *.vcxproj
 *.vcxproj.*
+*.sln
